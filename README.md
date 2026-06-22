@@ -42,8 +42,28 @@ wc -l all_strings.txt  # 899 strings found
 ```
 
 ### Step 4 — VirusTotal
-Pasted SHA256 hash on virustotal.com
-Multiple engines detected as RemcosRAT
+ ### Step 4 — VirusTotal Hash Check
+
+Copied SHA256 hash and pasted on virustotal.com:
+ddfff81d72e630cb6d8e77e59f362c40b6032d16ed9cd004c7c2e049360b80c0
+
+**Results:**
+- 35/71 security vendors detected as malicious
+- Detected as: RemcosRAT, Backdoor, RAT, Trojan
+- Tags: trojan, rat, remcos, c2
+
+**Sandbox Analysis (Behavior tab):**
+- C2 Domains: afun.it.com, tg77.it.com, yellowred.in
+- Registry: HKCU\Software\remcos_uydjlghidfpkwvk
+- Files: \AppData\Roaming\remcos\
+- Mutex: Remcos_Mutex_Inj
+- Process: Backdoor.exe created
+
+**MITRE ATT&CK from VirusTotal:**
+- T1055 — Process Injection
+- T1056 — Keylogger
+- T1113 — Screen Capture
+- T1547 — Boot Persistence
 
 ### Step 5 — MITRE ATT&CK Mapping
 Mapped findings to ATT&CK techniques manually
